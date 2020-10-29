@@ -1,3 +1,5 @@
+import token as t
+
 ## -- Read the source code from a file
 file = "test.txt"
 with open(file, "rt") as f:
