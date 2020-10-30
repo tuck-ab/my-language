@@ -5,6 +5,7 @@
 TT_INTLIT = "INTLIT"      ## Integer Literal
 TT_ID     = "ID"          ## Identifier
 TT_EOF    = "EOF"         ## End of File
+TT_BOOLOP = "BOOLOP"      ## Boolean Opperation
 TT_BINOP  = "BINOP"       ## Binary Opperation
 TT_EOL    = ";"           ## End of Line
 
@@ -14,7 +15,7 @@ TT_return = "return"      ## 'return' keyword
 TT_var    = "var"         ## 'var' keyword
 TT_assign = "="           ## assigning variables
 
-## -- Binary operations
+## -- Boolean operations
 # TT_eq  = "=="
 # TT_gt  = ">"
 # TT_lt  = "<"
@@ -31,10 +32,11 @@ TT_RCB = "}"
 TT_LSB = "["
 TT_RSB = "]"
 
-TT_PLUS = "+"
-TT_MINUS = "-"
-TT_MULT = "*"
-TT_DIV = "/"
+## -- Binary operations
+# TT_PLUS = "+"
+# TT_MINUS = "-"
+# TT_MULT = "*"
+# TT_DIV = "/"
 
 
 ## -- Token object
