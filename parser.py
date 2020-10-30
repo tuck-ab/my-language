@@ -23,13 +23,31 @@ class Parser:
                 self.advance()
             elif self.current_char in DIGITS:
                 self.tokens.append(self.make_number())
-                self.advance()
             elif self.current_char in BIN_OPS:
                 self.tokens.append(t.Token(t.TT_BINOP,self.current_char))
-                self.advance()
+            elif self.current_char == "(":
+                self.tokens.append(t.Token(t.TT_LB))
+            elif self.current_char == ")":
+                self.tokens.append(t.Token(t.TT_RB))
+            elif self.current_char == "{":
+                self.tokens.append(t.Token(t.TT_LCB))
+            elif self.current_char == "}":
+                self.tokens.append(t.Token(t.TT_RCB))
+            elif self.current_char == "[":
+                self.tokens.append(t.Token(t.TT_LSB))
+            elif self.current_char == "]":
+                self.tokens.append(t.Token(t.TT_RSB))
+
+            self.advance()
 
     def make_word(self):
         pass
 
     def make_number(self):
-        pass
+        current_num = ""
+
+        while self.current_char in DIGITS:
+            current_num += self.current_char
+            self.advance()
+
+        return t.Token(t.TT_INTLIT,current_num)
